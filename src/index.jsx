@@ -1,13 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { AppContainer } from "react-hot-loader";
+import App from "./components/App";
 
-ReactDOM.render(
-  <div>
-    <h1>Help Queue</h1>
-    <h2>{new Date().toLocaleTimeString()}</h2>
-    <h3>3a</h3>
-    <h3>Thato and Haley</h3>
-    <p><em>Firebase won't save record</em></p>
-  </div>,
-  document.getElementById('react-app-root')
-);
+const render = (Component) => {
+  ReactDOM.render(
+    <AppContainer>
+      <Component/>
+    </AppContainer>,
+    document.getElementById('react-app-root')
+  );
+};
+
+render(App);
+
+if (module.hot) {
+  module.hot.accept('./components/App', () => {
+    render(App);
+  });
+}
