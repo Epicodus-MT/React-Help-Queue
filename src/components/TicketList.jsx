@@ -3,7 +3,9 @@ import Ticket from './Ticket';
 import PropTypes from 'prop-types';
 
 function TicketList(props) {
+  console.log("before");
   console.log(props.ticketList);
+  console.log("after");
   return (
     <div>
       <hr/>
