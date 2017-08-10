@@ -30,7 +30,7 @@ class NewTicketControl extends React.Component {
     return (
       <div>
         <Button
-          block="true"
+          block
           bsStyle="primary"
           bsSize="large"
           onClick={this.showFormModal}>
